@@ -1,0 +1,39 @@
+API Example 
+
+Language: Java
+Framework: Spring
+Libraries Used:
+	JUnit
+	Mockito
+	Log4j
+	Jackson (to convert Java Objects to JSON and vice versa)
+	Apache POI (to read/write into excel format)
+
+API's
+
+GET /transactions{format}		It will return data from given format
+								will return error if format is invalid. valid formats are (csv, excel)
+POST /transactions{format}		It will create new transaction and save it to file with given format. 
+
+
+Testing Approcah
+
+Unit Tests
+	A Unit test for controller function is written for demonstration purpose.
+	Unit test is mocking the service call using Mockito.
+
+Integration Tests
+	Integration tests are written to save/retrieve data from both excel/csv data files.
+	I considered two approaches to write integration tests. 
+		
+		To deploy the application on Tomcat or Jetty server and then make the api calls
+		and verify the response of api calls.
+
+		To mock the request, but NOT mock the serice calls. This way only web container is mocked but
+		the controller/service layers are invoked in same manner as they would be after deployment. 
+		I find this appraoch slighly better then first approach because I believe it is much faster and
+		overall testing architecture remains identical to that of unit tests. Moreover, easier to automate 
+		tests while building as no extra plugins from maven will be required as in the first case.
+
+Transaction JSON String for Post call
+	{"id" : 1, "numberOfItems": 3, "price": 25}
