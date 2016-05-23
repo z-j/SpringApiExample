@@ -49,7 +49,7 @@ public class ControllerIntegrationTest {
 				.contentType(TestUtil.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(t1))
 				)
-		.andExpect(status().isOk())
+		.andExpect(status().isCreated())
 		.andExpect(content().contentType(TestUtil.APPLICATION_JSON_UTF8))
 		.andExpect(content().string(Constants.MSG_TRANSACTION_SAVED));
 
@@ -57,7 +57,7 @@ public class ControllerIntegrationTest {
 				.contentType(TestUtil.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(t2))
 				)
-		.andExpect(status().isOk())
+		.andExpect(status().isCreated())
 		.andExpect(content().contentType(TestUtil.APPLICATION_JSON_UTF8))
 		.andExpect(content().string(Constants.MSG_TRANSACTION_SAVED));
 
@@ -92,7 +92,7 @@ public class ControllerIntegrationTest {
 				.contentType(TestUtil.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(t1))
 				)
-		.andExpect(status().isOk())
+		.andExpect(status().isCreated())
 		.andExpect(content().contentType(TestUtil.APPLICATION_JSON_UTF8))
 		.andExpect(content().string(Constants.MSG_TRANSACTION_SAVED));
 
@@ -100,7 +100,7 @@ public class ControllerIntegrationTest {
 				.contentType(TestUtil.APPLICATION_JSON_UTF8)
 				.content(TestUtil.convertObjectToJsonBytes(t2))
 				)
-		.andExpect(status().isOk())
+		.andExpect(status().isCreated())
 		.andExpect(content().contentType(TestUtil.APPLICATION_JSON_UTF8))
 		.andExpect(content().string(Constants.MSG_TRANSACTION_SAVED));
 

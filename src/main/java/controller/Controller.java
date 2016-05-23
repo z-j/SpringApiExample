@@ -25,14 +25,14 @@ public class Controller {
 	Service service = new Service();
 
 	@RequestMapping(value = "/transactions/{format}", method = RequestMethod.POST, headers = "Accept=application/json")  
-	public ResponseEntity<?> addCountry(@PathVariable String format, @RequestBody Transaction transaction) {
+	public ResponseEntity<?> createTransaction(@PathVariable String format, @RequestBody Transaction transaction) {
 
 		log.info("format:"+format);
 		log.info(transaction.toString());
 		
 		try {
 			service.saveTransaction(transaction, format);
-			return new ResponseEntity<>(Constants.MSG_TRANSACTION_SAVED, HttpStatus.OK);
+			return new ResponseEntity<>(Constants.MSG_TRANSACTION_SAVED, HttpStatus.CREATED);
 		} catch(Exception e) {
 			log.error(e.getMessage(), e);
 			//with assumption that all checked exceptions are caught and handled before re-throwing, with custom error message

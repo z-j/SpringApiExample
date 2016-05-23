@@ -43,8 +43,4 @@ public class Transaction {
 	public String toString() {
 		return this.getId()+", "+this.getNumberOfItems() + ", " + this.getPrice();
 	}
-	
-	
-	
-
 }
