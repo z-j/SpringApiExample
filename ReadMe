@@ -52,13 +52,4 @@ Versioning of API's
 	mechanism. I would add the verion number for API's as query string parameter, as it is for AWS.
 	Every time client makes a request, it will have to mention the version number. 
 
-![][image1]
-![][image2]
-![][image3]
-![][image4]
-
-
-[image1]: ./img/api-2.png
-[image2]: ./img/api-3.png
-[image3]: ./img/api-4.png
-[image4]: ./img/api-5.png
+Screenshots are in the screenshots are folder.
